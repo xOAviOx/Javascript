@@ -89,7 +89,7 @@ const averageAge = (ageAvi + ageSarah) /2;
 console.log(ageAvi, ageSarah, averageAge);
 */
 /*
-
+const firstName = 23;
 const firstName = 'Avi';
 const job = 'programer';
 const birthYear = 2005;
