@@ -16,7 +16,7 @@ console.log(typeof javascriptIsFun);
 // console.log(typeof 22);
 // console.log(typeof 'Avi');
 console.log("i love js")
-
+//console.log(typeof javascript);
 javascriptIsFun = 'YES!';
 console.log(typeof javascriptIsFun);
 
