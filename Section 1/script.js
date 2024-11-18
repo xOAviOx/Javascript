@@ -34,6 +34,7 @@ console.log(typeof null);
 /*
 let age = 17;
 age = 20;
+console.log(age)
 
 const birthYear = 2007;
 // birthYear = 1990;
