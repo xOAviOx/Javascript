@@ -7,6 +7,7 @@ This is
 a comment
 */
 /*
+let javascript = false;
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
