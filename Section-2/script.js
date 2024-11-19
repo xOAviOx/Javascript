@@ -17,6 +17,8 @@ if (hasDriversLicense) console.log("I can drive::");
 function logger() {
   console.log("My name is Avi");
 }
+let us = 'js';
+
 //Calling, running, invoking a function
 logger();
 logger();
