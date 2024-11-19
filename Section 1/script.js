@@ -10,7 +10,7 @@ a comment
 let javascript = false;
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
-
+//console.log('avi')
 // console.log(typeof true);
 console.log(typeof javascriptIsFun);
 // console.log(typeof 22);
