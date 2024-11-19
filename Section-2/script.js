@@ -12,7 +12,8 @@ if (passTest) {
 if (hasDriversLicense) console.log("I can drive::");
 
 */
-/*
+/*console.log('js')
+
 function logger() {
   console.log("My name is Avi");
 }
