@@ -10,7 +10,7 @@ if (passTest) {
   hasDriversLicense = true;
 }
 if (hasDriversLicense) console.log("I can drive::");
-
+console.log(us)
 */
 /*console.log('js')
 
