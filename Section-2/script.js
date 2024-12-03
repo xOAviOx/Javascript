@@ -286,6 +286,7 @@ const avi = {
 
 console.log(avi.getSummary());
 */
+/*
 const mark = {
   fullName: "Mark Miller",
   mass: 78,
@@ -310,3 +311,135 @@ if(mark.bmi()>john.bmi()){
 }else{
   console.log(`${john.fullName}s BMI (${john.bmi} is higher than ${mark.fullName}s ${mark.bmi})`);
 }
+// console.log('Lifting weights repetition 1');
+// console.log('Lifting weights repetition 2');
+// console.log('Lifting weights repetition 3');
+// console.log('Lifting weights repetition 4');
+// console.log('Lifting weights repetition 5');
+// console.log('Lifting weights repetition 6');
+// // console.log('Lifting weights repetition 7');
+// // console.log('Lifting weights repetition 8');
+// // console.log('Lifting weights repetition 9');
+// // console.log('Lifting weights repetition 10');
+
+// // //For loops leep running while condition is true
+// // // for(let rep = 1; rep<=10; rep++){
+// // console.log(`Lifting weights repetition ${rep}`);
+// // }
+// const aviArray = [
+//   "Avi",
+//   "Shukla",
+//   2037 - 2005,
+//   "programmer",
+//   ["Michael", "peter", "steven"],
+//   true,
+// ];
+// const types = [];
+// for (let i = 0; i < aviArray.length; i++) {
+//   console.log(aviArray[i], typeof aviArray[i]);
+//   //Filling a types array
+//   // types[i]= typeof aviArray[i];
+//   types.push(typeof aviArray[i]);
+// }
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2001];
+// const ages = [];
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2037 - years[i]);
+// }
+// console.log(ages);
+
+// //contine and break
+// for (let i = 0; i < aviArray.length; i++) {
+//   if (typeof aviArray[i] !== "string") continue;
+//   console.log(aviArray[i], typeof aviArray[i]);
+// }
+
+// // //break
+// // for (let i = 0; i < aviArray.length; i++) {
+// //   if (typeof aviArray[i] === "number") break;
+// //   console.log(aviArray[i], typeof aviArray[i]);
+// // }
+
+// // const aviArray = [
+// //     "Avi",
+// //     "Shukla",
+// //     2037 - 2005,
+// //     "programmer",
+// //     ["Michael", "peter", "steven"],
+// //     true,
+// //   ];
+
+// //   for (let i = aviArray.length-1;i >=0; i--){
+// //     console.log(i,aviArray[i]);
+// //   }
+
+// //   for(let i = 1; i<=3; i++){
+// //     console.log(`------Starting exercise ${i}`);
+// //     for(let u = 1; u<=5;u++){
+// //       console.log(`Lifting weights rep ${u}`);
+// //     }
+// //   }
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   // console.log(`Lifting weights repetition ${rep}`);
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`Lifting weights repetition ${rep}`);
+//   rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if(dice===6)console.log('loop has ended');
+// }
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+
+// const calcTip = (bill) => {
+//   return bill >= 50 && bill <= 300 ? (15 / 100) * bill : (20 / 100) * bill;
+// };
+
+// for (let i = 0; i < bills.length; i++) {
+//   tips.push(calcTip(bills[i]));
+//   totals.push(calcTip(bills[i]) + bills[i]);
+// }
+// console.log(tips);
+// console.log(totals);
+
+// const calcAverage = function (arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum = arr[i] + sum;
+//   }
+//   return sum / arr.length;
+// };
+// const avg = calcAverage(totals);
+// console.log(avg);
+/*
+const calcAverage = function (arr) {
+  let sum = 0;
+  const newarr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== "number") continue;
+      sum += arr[i];
+      newarr.push(sum);
+  }
+  if (sum === 0) {
+    console.log("No value");
+    return sum;
+  } else {
+    return sum / newarr.length;
+  }
+};
+
+const avg = calcAverage([2 , 3 , 7 , "Avi"]);
+console.log(avg);
+*/
