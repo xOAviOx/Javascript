@@ -18,3 +18,12 @@ function goals (la, copa, ucl) {
 }
 goals(5,10,2)
 
+var number=function(array){
+  //your awesome code here
+  let arr =[];
+  for(let i= 0; i< array.length ; i++){
+    arr.push(`${i+1}: ${array[i]}`)
+  }
+  return arr;
+}
+console.log(number(["a", "b", "c"]))
