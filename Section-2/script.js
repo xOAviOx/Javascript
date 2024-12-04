@@ -73,6 +73,7 @@ const yearsUntilRetirement = (birthYear,firstName) => {
   return `${firstName} retires in ${retirement}`
 }
 
+//promise
 //console.log(abc)
 console.log(yearsUntilRetirement(2006,'bob'));
 console.log(yearsUntilRetirement(2005, 'Avi'));
