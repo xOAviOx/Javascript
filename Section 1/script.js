@@ -38,8 +38,9 @@ console.log(age)
 console.log('hi')
 
 const birthYear = 2007;
-// birthYear = 1990;
 
+// birthYear = 1990;
+console.log(birthYear)
 var job = 'programmer';
 job = 'student';
 */
