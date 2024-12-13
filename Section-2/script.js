@@ -5,7 +5,7 @@
 /*
 let hasDriversLicense = false;
 const passTest = true;
-
+console.log('ABCD')
 if (passTest) {
   hasDriversLicense = true;
 }
