@@ -245,6 +245,49 @@ if (restaurant.orderPizza) {
 }
 restaurant.orderPizza && restaurant.orderPizza('Mushrooms', 'Spinach');
 */
+// lecture 6
+/*
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+//Nullish : null and undefined (Not 0 or "") 
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+
+//lecture 7
+/*
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+//OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// rest1.owner = rest1.owner && '<Anonymos>';
+
+// rest2.owner = rest2.owner && '<Anonymos>';
+
+rest1.owner &&= '<Anonymos>';
+rest2.owner &&= '<Anonymos>';
+
+console.log(rest1);
+console.log(rest2);
+*/
+
 
 // lecture 6
 /*
