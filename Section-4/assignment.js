@@ -333,3 +333,133 @@ for (let i = 0; i < books.length; i++) {
 //   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2)
 // }
 
+// let entries = [];
+// const keys = Object.keys(books[0].thirdParty.goodreads);
+// console.log(keys);
+// for (const key of keys) {
+//   entries.push([key]);
+// }
+// console.log(entries);
+
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// sum = 0;
+// for (const odd of Object.values(game.odds)) {
+//   sum += odd;
+// }
+// sum /= Object.values(game.odds).length;
+// console.log(sum);
+/*
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Rissoto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Avi'));
+
+console.log(ordersSet.size);
+
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Rissoto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('Jonasschemdtman'));
+*/
+// const allKeywords = [];
+// for (let i = 0; i < books.length; i++) {
+//   allKeywords.push(...books[i].keywords);
+// }
+// console.log(allKeywords);
+
+// const uniqueKeywords = new Set(allKeywords);
+// console.log(uniqueKeywords);
+
+// uniqueKeywords.add('Coding', 'Science');
+// console.log(uniqueKeywords);
+
+// uniqueKeywords.delete('business');
+// console.log(uniqueKeywords);
+
+// const uniqueKeywordsArr = [...new Set(uniqueKeywords)];
+// console.log(uniqueKeywordsArr);
+
+// uniqueKeywords.clear();
+// console.log(uniqueKeywords);
+/*
+const bookMap = new Map([
+  ['title', 'Clean Code'],
+  ['author', 'Robert C. Martin'],
+]);
+
+console.log(bookMap);
+
+bookMap.set('Pages', 464);
+console.log(bookMap);
+
+console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`);
+
+console.log(bookMap.size);
+
+console.log(bookMap.has('author') &&'The author of the book is known');
+*/
