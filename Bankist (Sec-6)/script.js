@@ -10,6 +10,7 @@ const account1 = {
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
   interestRate: 1.2, // %
   pin: 1111,
+  type: "premium",
 };
 
 const account2 = {
@@ -17,6 +18,7 @@ const account2 = {
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
+  type: "standard",
 };
 
 const account3 = {
@@ -24,6 +26,7 @@ const account3 = {
   movements: [200, -200, 340, -300, -20, 50, 400, -460],
   interestRate: 0.7,
   pin: 3333,
+  type: "premium",
 };
 
 const account4 = {
@@ -31,6 +34,7 @@ const account4 = {
   movements: [430, 1000, 700, 50, 90],
   interestRate: 1,
   pin: 4444,
+  type: "basic",
 };
 
 const accounts = [account1, account2, account3, account4];
@@ -82,13 +86,13 @@ const displayMovements = function (movements, sort = false) {
   });
 };
 
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} 💶`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance} 💶`;
 };
 
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
 
@@ -99,9 +103,9 @@ const calcDisplaySummary = function (movements) {
 
   labelSumOut.textContent = `${Math.abs(out)}`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
       return int >= 1;
     })
@@ -109,7 +113,6 @@ const calcDisplaySummary = function (movements) {
   labelSumInterest.textContent = `${interest}`;
 };
 
-calcDisplayBalance(account1.movements);
 const createUsernames = function (accs) {
   accs.forEach(acc => {
     acc.username = acc.owner
@@ -119,10 +122,17 @@ const createUsernames = function (accs) {
       .join("");
   });
 };
-
+createUsernames(accounts);
+const updatUI = function (acc) {
+  //Display movements
+  displayMovements(acc.movements);
+  //Display balance
+  calcDisplayBalance(acc);
+  ///Dispaly summary
+  calcDisplaySummary(acc);
+};
 //Event handlers
 let currentAccount;
-
 btnLogin.addEventListener("click", function (e) {
   //Prevent form from submitting
   e.preventDefault();
@@ -132,12 +142,81 @@ btnLogin.addEventListener("click", function (e) {
   console.log(currentAccount);
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
-    //Display UI and message
+    //Display UI and a welcome message
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(" ")[0]
     }`;
+    containerApp.style.opacity = 100;
+    //clear input fields
+    inputLoginUsername.value = inputLoginPin.value = "";
+    inputLoginPin.blur();
+
+    //Update UI
+    updatUI(currentAccount);
   }
 });
+
+btnTransfer.addEventListener("click", function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const recieverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  inputTransferAmount.value = inputTransferTo.value = "";
+  if (
+    amount > 0 &&
+    recieverAcc &&
+    currentAccount.balance >= amount &&
+    recieverAcc?.username !== currentAccount.username
+  ) {
+    //DOing the transfer
+    currentAccount.movements.push(-amount);
+    recieverAcc.movements.push(amount);
+    //Update UI
+    updatUI(currentAccount);
+  }
+});
+
+btnLoan.addEventListener("click", function (e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    //Add the movement
+    currentAccount.movements.push(amount);
+
+    //Update UI
+    updatUI(currentAccount);
+  }
+  inputLoanAmount.value = "";
+});
+
+btnClose.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    //Delete account
+    accounts.splice(index, 1);
+
+    //Hide UI
+    containerApp.style.opacity = 0;
+  }
+  inputCloseUsername.value = inputClosePin.value = "";
+});
+
+let sorted = false;
+
+btnSort.addEventListener("click", function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
 // console.log(username);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -381,3 +460,61 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(accounts);
 // const account = accounts.find(acc=> acc.owner==='Jessica Davis')
 // console.log(account);
+// console.log(movements);
+// const lastwithdrawal = movements.findLast(mov => mov < 0);
+// console.log(lastwithdrawal);
+
+// const latestLargeMovementIndex = movements.findLastIndex(
+//   mov => Math.abs(mov) > 2000
+// );
+// console.log(latestLargeMovementIndex);
+
+// console.log(movements);
+// console.log(movements.includes(-130));
+
+//Every
+
+// console.log(movements.every(mov => mov > 0));
+// console.log(account4.movements.every(mov => mov > 0));
+
+// // //Seperate callback
+// const deposit = mov=> mov>0;
+// console.log(movements.some(deposit));
+// console.log(movements.(deposit));
+
+// //Strings
+// const owners = ["Jonas", "Zach", "Adam", "Martha,"];
+// console.log(owners.sort());
+
+// console.log(movements);
+
+// //
+// // movements.sort((a, b) => {
+// //   if (a > b) return 1;
+// //   if (b < a) return -1;
+// // });
+// movements.sort((a, b) => a - b);
+// console.log(movements);
+// movements.sort((a, b) => b - a);
+// console.log(movements);
+
+console.log(movements);
+
+const groupedMovements = Object.groupBy(movements, movement =>
+  movement > 0 ? "deposit" : "withdrawals"
+);
+
+console.log(groupedMovements);
+
+const groupedByActivity = Object.groupBy(accounts, account => {
+  const movementCount = account.movements.length;
+
+  if (movementCount >= 8) return "Very Active";
+  if (movementCount >= 4) return " Active";
+  if (movementCount >= 1) return "Moderate";
+  return "Inactive";
+});
+console.log(groupedByActivity);
+
+const groupedAccounts = Object.groupBy(accounts, ({ type }) => type);
+console.log(groupedAccounts);
