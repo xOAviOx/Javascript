@@ -30,92 +30,61 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
-btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
-  console.log(e.target.getBoundingClientRect());
-});
-
-////////////////////////////////////////////
-/*
+////////////////////////////////////////////////////
 console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
 
-const header = document.querySelector('.header');
-const allSections = document.querySelectorAll('.section');
-console.log(allSections);
+const allSection = document.querySelectorAll('.section');
+console.log(allSection);
 
 document.getElementById('section--1');
-const allbuttons = document.getElementsByTagName('button');
-console.log(allbuttons);
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
 
 console.log(document.getElementsByClassName('btn'));
 
 //Creating and inserting elements
 
-const message = document.createElement('div');
-message.classList.add('cookie-message');
-message.textContent = `We use cookies for improved funcitonality and analytics.`;
-message.innerHTML =
-  'We use cookies for improved funcitonality and analytics. <button class="btn btn--close-cookie">Got it! </button>';
+// .insertAdjacentHTML in Bankist app
 
-// header.prepend(message);
-// header.append(message);
+const message = document.createElement('div'); // takes the tagname of html element as an arguement and creates a dom element
+
+message.classList.add('cookie-message'); //Adds a class to the dom element we created (NOTE: It is not on dom yet we have to manually add it to the dom)
+
+message.textContent =
+  'We use cookies for improved functionality and analytics.'; //It was just setting the text into the dom element we created
+
+message.innerHTML =
+  'We use cookies for improved functionality and analytics. <button class= "btn btn--close-cookie"> Got it </button>'; // Adds HTML content to our dom element that we created
+
+const header = document.querySelector('.header');
+
+// header.prepend(message); //We inserted the dom elemetn into the header using prepend(it adds the element as first child of header)
+
+// header.append(message); //It shifted the dom element to last child of the header element because it adds the element as the last child of the main element
+
+//append and prepend shifts the same element not add
+
+//To insert the same element at two places we need
+
+// header.append(message.cloneNode(true)) NOTEL: But we do not want this
 
 header.append(message);
 
-// header.before(message);
-// header.after(message);
+// 2 more elements to add or insert elements
+// header.before(message); // Inserts the elemtn before the header element as a sibling
 
-//Delete elements
+// header.after(message); // Inserts the element after the header element as a sibling
+
+//Delete the element
+
 document
   .querySelector('.btn--close-cookie')
   .addEventListener('click', function () {
-    message.remove();
+    // message.remove(); //this is a new and simple way where you select the element directly
+
+    //Another way
+
+    message.parentElement.removeChild(message); //We first check the parent element and then from its child elements we delete the selected child that we want
   });
-
-//Styles
-
-message.style.backgroundColor = `#37383d`;
-message.style.width = '120%';
-
-console.log(message.style.color);
-console.log(message.style.backgroundColor);
-console.log(getComputedStyle(message).color);
-console.log(getComputedStyle(message).height);
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
-
-document.documentElement.style.setProperty('--color-primary', 'orangered');
-
-//Attributes
-const logo = document.querySelector('.nav__logo');
-console.log(logo.alt);
-console.log(logo.src);
-console.log(logo.className);
-logo.alt = 'Bankr Logo';
-//Non standard
-console.log(logo.getAttribute('designer'));
-logo.setAttribute('company', 'Bankr');
-
-logo.getAttribute('src');
-
-const link = document.querySelector('.nav__link--btn');
-console.log(link.href);
-console.log(link.getAttribute('href'));
-
-//Data attributes
-
-console.log(logo.dataset.versionNumber);
-
-// classes
-logo.classList.add()
-logo.classList.remove()
-logo.classList.contains()
-//Dont use
-logo.className ='Avi'
-*/
