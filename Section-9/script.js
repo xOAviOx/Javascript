@@ -212,29 +212,168 @@ console.log(account.movements);
 // console.log(bmw.brake());
 // console.log(bmw.speedUS);
 // console.log(bmw.speedUS);
+/*
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 2002;
+steven.calcAge();
+console.log(steven.__proto__ === PersonProto);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1979);
+sarah.calcAge();
+*/
 
 ///////////////////////////////////////
 //Inheritance between "classes": constructor functions
-const Person = function (firstName, birthYear) {
-  this.firstName = firstName;
-  this.birthYear = birthYear;
-};
 
-Person.prototype.calcAge = function () {
-  console.log(2037 - this.birthYear);
-};
+// const Person = function (firstName, birthYear) {
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
+// };
 
-const Student = function (firstName, birthYear, course) {
-  this.firstName = firstName;
-  this.birthYear = birthYear;
-  this.course = course;
-};
+// Person.prototype.calcAge = function () {
+//   console.log(2037 - this.birthYear);
+// };
 
-Student.prototype.introduce = function () {
-  console.log(`My name is ${this.firstName} and I study ${this.course}`);
-};
+// const Student = function (firstName, birthYear, course) {
+//   Person.call(this, firstName, birthYear);
+//   this.course = course;
+// };
 
-const mike = new Student('Mike', 2020, 'Computer Science');
-console.log(mike);
+// //Linking prototypes
+// Student.prototype = Object.create(Person.prototype);
 
-mike.introduce();
+// Student.prototype.introduce = function () {
+//   console.log(`My name is ${this.firstName} and I study ${this.course}`);
+// };
+
+// const mike = new Student('Mike', 2020, 'Computer Science');
+// console.log(mike);
+// mike.introduce();
+// mike.calcAge(``);
+
+// console.log(mike.__proto__);
+// console.log(mike.__proto__.__proto__);
+
+// console.dir(Student.prototype.constructor);
+
+// class PersonCl {
+//   constructor(fullName, birthYear) {
+//     this.fullName = fullName;
+//     this.birthYear = birthYear;
+//   }
+
+//   // Method will be added to .prototype property
+//   calcAge() {
+//     console.log(2037 - this.birthYear);
+//   }
+//   greet = function () {
+//     console.log(`Hey ${this.fullName}`);
+//   };
+
+//   get age() {
+//     return 2037 - this.birthYear;
+//   }
+
+//   set fullName(name) {
+//     if (name.includes(' ')) this._fullName = name;
+//     else alert(`${name} is not a full name`);
+//   }
+//   static hey() {
+//     console.log('Hey there !!!');
+//     console.log(this);
+//   }
+// }
+
+// class StudentCl extends PersonCl {
+//   constructor(fullName, birthYear, course) {
+//     //Always needs to happen first
+//     super(fullName, birthYear);
+//     this.course = course;
+//   }
+//   introduce() {
+//     console.log(`My name is ${this.fullName} and I study ${this.course}`);
+//   }
+// }
+
+// const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
+// martha.introduce();
+
+///Encapsulation: Private class fields and methods
+//1. Public Fields
+//2. Private fields
+//3.Public Methods
+//4. Privat Methods
+
+//Static version of these 4
+
+class Account {
+  locale = navigator.language;
+  bank = 'Bankist';
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.#pin = pin;
+    // this.movements = [];
+    // this.locale = navigator.language;
+
+    console.log(`Thanks for opening an account, ${owner}`);
+  }
+
+  getMovements() {
+    return this.#movements;
+    //Not chainable
+  }
+  //Public interface (API)
+  deposit(val) {
+    this.#movements.push(val);
+    return this;
+  }
+  withdrawal(val) {
+    this.deposit(-val);
+    return this;
+  }
+  #approveLoan(val) {
+    return true;
+  }
+
+  requestLoan(val) {
+    if (this.#approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Loan approved`);
+    }
+    return this;
+  }
+}
+const acc1 = new Account('Jonas', 'EUR', 1111);
+
+// acc1.movements.push(250);
+// acc1.movements.push(-100);
+
+const movements = acc1
+  .deposit(300)
+  .withdrawal(100)
+  .withdrawal(50)
+  .requestLoan(32929)
+  .withdrawal(400)
+  .getMovements();
+
+console.log(acc1);
+console.log(movements);
+// Account.test();
