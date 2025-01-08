@@ -127,7 +127,7 @@ class App {
       this._renderWorkoutMarker(work);
     });
   }
-
+//Showing form
   _showForm(mapE) {
     this.#mapEvent = mapE;
     form.classList.remove("hidden");
