@@ -93,6 +93,7 @@ class App {
     containerWorkouts.addEventListener("click", this._moveToPopup.bind(this));
   }
 
+  //Getting position using geo location
   _getPosition() {
     if (navigator.geolocation)
       navigator.geolocation.getCurrentPosition(
