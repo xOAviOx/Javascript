@@ -27,3 +27,12 @@ var number=function(array){
   return arr;
 }
 console.log(number(["a", "b", "c"]))
+function goals (la, copa, ucl) {
+  // code goes here
+  if(typeof la === 'number' &&  typeof copa === 'number' && typeof ucl ==='number'){
+     return la+copa+ucl
+  }else{
+    console.log('Wrong input')
+  }
+}
+goals(5,10,2)
