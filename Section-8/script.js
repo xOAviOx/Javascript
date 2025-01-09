@@ -139,7 +139,7 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 // //Sticky navigation
 // const obsCallback = function (entries,observer) {
 //   entries.forEach(entry=>{
-//     console.log(entry);
+//     console.log(entry)
 //   })
 
 // };
