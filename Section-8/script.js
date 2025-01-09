@@ -94,7 +94,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
-//Tabbed component
+//Tabbed component part
 
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
