@@ -40,7 +40,7 @@ a:visited {
   color: var(--color-brand--1);
 }
 
-/* SIDEBAR */
+/* SIDEBAR TOP*/
 .sidebar {
   flex-basis: 50rem;
   background-color: var(--color-dark--1);
