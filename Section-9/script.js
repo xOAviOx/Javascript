@@ -19,6 +19,7 @@ console.log(avi);
 //3. {} the object is linked to a prototype
 //4. fucntion automatically returns the empty object {} at beginning
 
+//Await
 const matilda = new Person('Matilda', 2017);
 const jack = new Person('jack', 1975);
 console.log(matilda, jack);
