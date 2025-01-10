@@ -71,6 +71,8 @@ const renderError = function (msg) {
 //   });
 // };
 
+//comment
+
 // getCountryData('india');
 /*
 const getCountryAndNeighbour = function (country) {
