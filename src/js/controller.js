@@ -306,7 +306,9 @@ const controlAddRecipe = async function (newRecipe) {
     addRecipeView.renderError(err.message);
   }
 };
-
+const newFetaure = function () {
+  console.log('Welcome tpo app');
+};
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -315,6 +317,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSeachResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  console.log('Welcome');
+  newFetaure();
 };
 init();
