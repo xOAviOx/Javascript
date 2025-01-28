@@ -145,6 +145,7 @@ const getCountryAndNeighbour = function (country) {
 
 getCountryAndNeighbour('usa');
 
+//callbacxk hell
 setTimeout(() => {
   console.log('1 Second passed');
   setTimeout(() => {
