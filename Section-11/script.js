@@ -169,6 +169,7 @@ setTimeout(() => {
   request.send();
   */
 
+//fetch request
 const request = fetch(`https://restcountries.com/v2/name/india?fullText=true`);
 // console.log(request);
 
