@@ -88,6 +88,7 @@ const getCountryAndNeighbour = function (country) {
   request.send();
 
   const renderCountry = function (data, className = '') {
+  //markup
     const html =
       '<article class="country ' +
       className +
