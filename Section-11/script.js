@@ -128,7 +128,8 @@ const getCountryAndNeighbour = function (country) {
       'GET',
       `https://restcountries.com/v2/alpha/${neighbour}?fullText=true`
     );
-
+    //send the request
+    
     request2.send();
 
     request2.addEventListener('load', function () {
