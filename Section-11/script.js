@@ -31,6 +31,7 @@ const renderError = function (msg) {
   // countriesContainer.style.opacity = 1;
 };
 ///////////////////////////////////////
+//api
 //https://countries-api-836d.onrender.com/countries/
 
 //https://restcountries.com/v2/name/india
