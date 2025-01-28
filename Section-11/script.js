@@ -46,7 +46,7 @@ const renderError = function (msg) {
 
 //   request.send();
 
-//event listner
+//event listner for loading
 
 //   request.addEventListener('load', function () {
 //     const [data] = JSON.parse(this.responseText);
