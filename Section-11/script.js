@@ -483,7 +483,7 @@ btn.addEventListener('click', whereAmI);
 //     renderError(`!!!${err.message}`);
 //   }
 // };
-
+//soemthing
 // console.log('1: will get location');
 
 // // const city = whereAmI();
