@@ -104,7 +104,7 @@ class App {
         }
       );
   }
-
+  //Load the map method
   _loadMap(position) {
     const { latitude } = position.coords;
     const { longitude } = position.coords;
