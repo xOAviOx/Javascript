@@ -41,6 +41,7 @@ class Running extends Workout {
     return this.pace;
   }
 }
+//Cycling class
 class Cycling extends Workout {
   type = "cycling";
   constructor(coords, distance, duration, elevationGain) {
