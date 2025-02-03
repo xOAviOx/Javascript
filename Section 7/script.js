@@ -52,7 +52,7 @@ const account2 = {
 const accounts = [account1, account2];
 
 /////////////////////////////////////////////////
-// Elements
+// Elements selection
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
 const labelBalance = document.querySelector('.balance__value');
