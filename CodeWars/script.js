@@ -15,7 +15,7 @@ function goals (la, copa, ucl) {
   }else{
     console.log('Wrong input')
   }
-}
+}wqdqwd
 goals(5,10,2)
 
 var number=function(array){
