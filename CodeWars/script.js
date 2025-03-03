@@ -17,6 +17,7 @@ function goals (la, copa, ucl) {
   }
 }wqdqwd
 goals(5,10,2)
+goals(5,10,2)
 
 var number=function(array){
   //your awesome code here
