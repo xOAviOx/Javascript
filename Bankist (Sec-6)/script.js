@@ -125,6 +125,7 @@ const createUsernames = function (accs) {
 createUsernames(accounts);
 const updatUI = function (acc) {
   //Display movements
+  //Display movements
   displayMovements(acc.movements);
   //Display balance
   calcDisplayBalance(acc);
