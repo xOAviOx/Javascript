@@ -57,4 +57,5 @@ console.log(JadenString("How can mirrors be real if our eyes arent real"))
 //example6
 // siwjqw
 // sdafased
+// sdafased
 // dhasdhfseee
