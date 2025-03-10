@@ -521,3 +521,5 @@ console.log(groupedByActivity);
 
 const groupedAccounts = Object.groupBy(accounts, ({ type }) => type);
 console.log(groupedAccounts);
+
+console.log(groupedAccounts);
